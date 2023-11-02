@@ -1,0 +1,26 @@
+name: first action work flow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs: 
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: hello job1
+        run: echo "job1 Hi!"
+        shell: bash
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bye job1
+        run: echo "bye job1!"
+        shell: bash
+    
